@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget31"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:overScrollMode="always">
+
+<!--     <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent" 
+        android:id="@+id/svMain"> -->
+
+        <Button
+            android:id="@+id/btPlayerTransition"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:onClick="playerTransit"
+            android:text="Player" />
+
+        <Button
+            android:id="@+id/btPlayListTransition"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/btPlayerTransition"
+            android:gravity="center"
+            android:onClick="playListTransit"
+            android:text="Play List" />
+
+        <Button
+            android:id="@+id/btDirTransition"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/btPlayListTransition"
+            android:gravity="center"
+            android:onClick="dirTransit"
+            android:text="Directory fetch" />
+
+        <Button
+            android:id="@+id/btPlayListNav"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/btPlayListTransition"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:onClick="playListNavTransit"
+            android:text="PlayList Navigation Transition" />
+
+        <Button
+            android:id="@+id/btPlayerTabHost"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="false"
+            android:layout_marginTop="55dp"
+            android:gravity="center"
+            android:onClick="playerTabHostTransit"
+            android:text="Player Tab host Transition" />
+
+        <Button
+            android:id="@+id/btPlayerTab"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="false"
+            android:layout_below="@+id/btPlayListNav"
+            android:layout_marginTop="55dp"
+            android:gravity="center"
+            android:onClick="playerTabTransit"
+            android:text="Player Tab Transition" />
+        <!-- <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+>
+    </ScrollView>
+ -->
+</RelativeLayout>
