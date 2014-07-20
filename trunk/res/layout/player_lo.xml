@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/playerLo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:paddingBottom="@dimen/activityVerticalMargin"
+    android:paddingLeft="@dimen/activityHorizontalMargin"
+    android:paddingRight="@dimen/activityVerticalMargin"
+    android:paddingTop="@dimen/activityHorizontalMargin"
+    tools:context=".MainActivity" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/contentDescriptionPlayer"
+        android:src="@drawable/icon" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100" >
+
+        <TextView
+            android:id="@+id/currentSongTxt"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_weight="90"
+            android:text="@string/currentSong"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Spinner
+            android:id="@+id/spnRepeatTimes"
+            android:layout_width="60dp"
+            android:layout_weight="10"
+            android:layout_height="22dp"
+            android:entries="@array/spRepeatAdv"
+            android:fadeScrollbars="true"
+            android:fadingEdge="vertical"
+            android:gravity="center_horizontal"
+            android:scrollbars="vertical"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutSeekbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:fitsSystemWindows="true"
+        android:orientation="horizontal"
+        android:weightSum="100" >
+
+        <TextView
+            android:id="@+id/tvTimeStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="10"
+            android:text="@string/initalTime"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <SeekBar
+            android:id="@+id/playSeekBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="80" />
+
+        <TextView
+            android:id="@+id/tvTimeEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="10"
+            android:gravity="center"
+            android:text="@string/initalTime"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llFuncBt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="false"
+        android:gravity="center_horizontal"
+        android:weightSum="100" >
+
+        <ImageButton
+            android:id="@+id/btRand"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="20"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/contentDescriptionActMode"
+            android:fitsSystemWindows="true"
+            android:onClick="rand"
+            android:src="@drawable/media_random" />
+        
+        <ImageButton
+            android:id="@+id/btPre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="20"
+            android:contentDescription="@string/preBtDes"
+            android:fitsSystemWindows="true"
+            android:onClick="rewind"
+            android:src="@android:drawable/ic_media_rew" />
+
+        <ImageButton
+            android:id="@+id/btPlayPause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="20"
+            android:contentDescription="@string/playBtDes"
+            android:fitsSystemWindows="true"
+            android:onClick="play"
+            android:src="@android:drawable/ic_media_play" />
+
+        <ImageButton
+            android:id="@+id/btNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="20"
+            android:contentDescription="@string/nextBtDes"
+            android:fitsSystemWindows="true"
+            android:onClick="forward"
+            android:src="@android:drawable/ic_media_ff" />
+
+        <ImageButton
+            android:id="@+id/btChangeAct"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="20"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/contentDescriptionActMode"
+            android:fitsSystemWindows="true"
+            android:onClick="changeRepeatMode"
+            android:src="@drawable/media_none_mode" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvAlbum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView1"
+        android:layout_below="@+id/linearLayout1"
+        android:text="@string/albumnName" />
+
+    <TextView
+        android:id="@+id/tvAlbumDis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvAlbum"
+        android:layout_alignBottom="@+id/tvAlbum"
+        android:layout_marginLeft="18dp"
+        android:layout_toRightOf="@+id/tvAlbum"
+        android:text="@string/albumnDisp" />
+
+</RelativeLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="piglet.mp3player"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+
+    <uses-sdk
+        android:maxSdkVersion="19"
+        android:minSdkVersion="14"
+        android:targetSdkVersion="14" />
+
+    <application
+        android:debuggable="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+        <activity
+            android:name="piglet.mp3player.Mp3player"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="piglet.mp3player.services.AudioService"
+            android:enabled="true"
+            android:label="@string/play_str" >
+            <intent-filter>
+                <action android:name="piglet.mp3player.services.audioService" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="piglet.mp3player.controller.Main"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="piglet.mp3player.controller.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="piglet.mp3player.controller.PlayerList"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="piglet.mp3player.controller.PLAYLIST" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="piglet.mp3player.controller.Player"
+            android:label="@string/playerScreen" >
+            <intent-filter>
+                <action android:name="piglet.mp3player.controller.PLAYER" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="piglet.mp3player.controller.DirectoryActivity"
+            android:label="@string/playerScreen" >
+            <intent-filter>
+                <action android:name="piglet.mp3player.controller.DIRECTORYACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="piglet.mp3player.activities.PlayListActivity"
+            android:label="@string/title_activity_play_list" >
+            <intent-filter>
+                <action android:name="piglet.mp3player.activities.PLAYLISTACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="piglet.mp3player.activities.PlayerTabActivity"
+            android:label="@string/title_activity_player_tab"
+            android:parentActivityName="piglet.mp3player.controller.AbstractPlayer" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="piglet.mp3player.controller.AbstractPlayer" />
+
+            <intent-filter>
+                <action android:name="piglet.mp3player.activities.PLAYERTABACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="piglet.mp3player.activities.PlayerTabHostActivity"
+            android:label="@string/title_activity_player_tab_host"
+            android:parentActivityName="android.app.TabActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="android.app.TabActivity" />
+
+            <intent-filter>
+                <action android:name="piglet.mp3player.activities.PLAYERTABHOSTACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
